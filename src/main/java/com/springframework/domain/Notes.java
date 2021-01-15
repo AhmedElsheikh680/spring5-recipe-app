@@ -1,13 +1,17 @@
 package com.springframework.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
+/**
+ * Created by jt on 6/13/17.
+ */
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
-@Getter
-@Setter
 public class Notes {
 
     @Id
@@ -19,4 +23,8 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
+
+    public Notes() {
+    }
+
 }
